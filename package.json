@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.1",
+    "pg": "^8.11.3",
+    "sequelize": "^6.37.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "redev-store",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
