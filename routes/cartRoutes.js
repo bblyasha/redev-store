@@ -1,5 +1,4 @@
-const router = require('express').Router();
-const UserController = require('../controllers/userControllers');
+const router = require('express').Router()
 const CartController= require('../controllers/cartContoller')
 const {authenticateToken} = require("../authMiddleware")
 const { validateCart } = require('../helpers/validationCart')

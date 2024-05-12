@@ -1,6 +1,5 @@
 const router = require('express').Router()
 
-//const usersRoutes = require('./usersRoutes')
 const authorization = require('./authorization')
 const profileRoutes = require('./profileRoutes')
 const goodRoutes = require('./goodRoutes')

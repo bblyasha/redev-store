@@ -1,7 +1,6 @@
 const pgDb = require('pg')
 const db = require('../config/db')
 const { Sequelize } = require('sequelize')
-const UsersModel = require('./UsersModel')
 
 const Good = db.define(
     'goods',

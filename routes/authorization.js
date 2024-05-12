@@ -1,8 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const UserController = require('../controllers/userControllers')
-const {authenticateToken} = require("../authMiddleware")
-const { authValidation } = require('../helpers/validationAuth')
+const { authValidationRules } = require('../helpers/validationAuth')
 
 
 /**
@@ -27,7 +26,7 @@ const { authValidation } = require('../helpers/validationAuth')
  *         description: Bad request.
  */
 
-router.post('/login', authValidation, UserController.login)
+router.post('/login', authValidationRules, UserController.login)
 
 /**
  * @swagger
@@ -51,7 +50,7 @@ router.post('/login', authValidation, UserController.login)
  *         description: Bad request.
  */
 
-router.post('/register', authValidation, UserController.register)
+router.post('/register', authValidationRules, UserController.register)
 
 
 

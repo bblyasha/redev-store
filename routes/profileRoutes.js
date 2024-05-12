@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const UserController = require('../controllers/userControllers');
 const ProfileController= require('../controllers/profileController')
 const {authenticateToken} = require("../authMiddleware")
 const { validateProfile, validateOptionalProfile } = require('../helpers/validationProfile')
