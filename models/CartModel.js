@@ -17,7 +17,11 @@ const Cart = db.define(
             type: Sequelize.INTEGER,
             allowNull: true    
         },
-        user_id: {
+        summedPrice: {
+            type: Sequelize.FLOAT,
+            allowNull: true
+        },
+        userId: {
             type: Sequelize.INTEGER,
             allowNull: false,
             references: {
@@ -25,7 +29,7 @@ const Cart = db.define(
                 key: 'id'
             }
         },
-        good_id: {
+        goodId: {
             type: Sequelize.INTEGER,
             allowNull: false,
             references: {

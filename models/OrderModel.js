@@ -2,7 +2,6 @@ const pgDb = require('pg')
 const db = require('../config/db')
 const { Sequelize } = require('sequelize')
 const UsersModel = require('./UsersModel')
-const GoodModel = require('./GoodModel')
 
 const Order = db.define(
     'orders',
@@ -29,7 +28,7 @@ const Order = db.define(
             type: Sequelize.FLOAT,
             allowNull: false 
         },
-        user_id: {
+        userId: {
             type: Sequelize.INTEGER,
             allowNull: false,
             references: {

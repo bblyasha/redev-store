@@ -3,14 +3,24 @@ const { UsersModel } = require('../models/model');
 
 class UserService {
     #COLLECTION = 'users'
-    async getUsers() {
+    
+    async createUser(user) {
     try {
-        const users = await UsersModel.findAll();
-        return users
+        const newUser = new UsersModel(user);
+        return await newUser.save();
     } catch (error) {
-        console.error('Error getting users:', error);
+        console.error('Error creating user:', error);
+        }
     }
-  }
+
+    async getOneUser(email) {
+        try {
+            return await UsersModel.findOne({where: { email } });
+        } catch (error) {
+            console.error('Error finding user:', error);
+        }
+    }
+
 }
 
 module.exports = new UserService

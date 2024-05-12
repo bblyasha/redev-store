@@ -5,7 +5,7 @@ const GoodModel = require('./GoodModel')
 const OrderModel = require('./OrderModel')
 
 const LinkGoodOrder = db.define(
-    'linksGoodOrder',
+    'linksGoodOrders',
     {
         id: {
             type: Sequelize.INTEGER,
@@ -13,7 +13,7 @@ const LinkGoodOrder = db.define(
             allowNull: false,
             primaryKey: true
         },
-        good_id: {
+        goodId: {
             type: Sequelize.INTEGER,
             allowNull: false,
             references: {
@@ -21,7 +21,7 @@ const LinkGoodOrder = db.define(
                 key: 'id'
             }
         },
-        order_id: {
+        orderId: {
             type: Sequelize.INTEGER,
             allowNull: false,
             references: {

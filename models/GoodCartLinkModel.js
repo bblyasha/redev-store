@@ -5,7 +5,7 @@ const GoodModel = require('./GoodModel')
 const CartModel = require('./CartModel')
 
 const LinkGoodCart = db.define(
-    'linksGoodCart',
+    'linksGoodCarts',
     {
         id: {
             type: Sequelize.INTEGER,
@@ -13,7 +13,7 @@ const LinkGoodCart = db.define(
             allowNull: false,
             primaryKey: true
         },
-        good_id: {
+        goodId: {
             type: Sequelize.INTEGER,
             allowNull: false,
             references: {
@@ -21,7 +21,7 @@ const LinkGoodCart = db.define(
                 key: 'id'
             }
         },
-        cart_id: {
+        cartId: {
             type: Sequelize.INTEGER,
             allowNull: false,
             references: {

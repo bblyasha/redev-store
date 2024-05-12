@@ -1,10 +1,11 @@
 const pgDb = require('pg')
 const db = require('../config/db')
 const { Sequelize } = require('sequelize')
-const UsersModel = require('./UsersModel')
+const OrderModel = require('./OrderModel')
 
-const Profile = db.define(
-    'profiles',
+
+const Payment = db.define(
+    'payments',
     {
         id: {
             type: Sequelize.INTEGER,
@@ -12,30 +13,19 @@ const Profile = db.define(
             allowNull: false,
             primaryKey: true
         },
-        name: {
+        statusPaid: {
             type: Sequelize.STRING,
             allowNull: false  
         },
-        surname: {
-            type: Sequelize.STRING,
-            allowNull: false
-        },
-        lastname: {
-            type: Sequelize.STRING,
-            allowNull: false
-        },
-        phone: {
-            type: Sequelize.STRING,
-            allowNull: false
-        },
-        userId: {
+        orderId: {
             type: Sequelize.INTEGER,
             allowNull: false,
             references: {
-                model: UsersModel,
+                model: OrderModel,
                 key: 'id'
             }
         }
-    })
+    }
+)
 
-module.exports = Profile;
+module.exports = Payment;
