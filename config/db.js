@@ -3,13 +3,12 @@
 const {Sequelize} = require('sequelize')
 
 const sequelize = new Sequelize(
-  'redevstore', 
-  'postgres', 
-  'bblyasha', 
+  process.env.DATABASE_URL,
   {
-  host: 'localhost',
-  dialect: 'postgres'
-});
-
+    host: process.env.HOST,
+    port: process.env.DB_PORT,
+    dialect: process.env.DIALECT
+  }
+)
 
 module.exports = sequelize
